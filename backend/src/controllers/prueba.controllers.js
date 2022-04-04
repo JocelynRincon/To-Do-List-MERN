@@ -5,9 +5,17 @@ PruebaCtrl.obtener=(req,res)=>{
     res.send('funcionando desde get')
 }
 
-PruebaCtrl.crear=(req,res)=>{
-    res.send('funcionando desde post')
-}
+PruebaCtrl.crear=async(req,res)=>{
+    const {nombre, descripcion}=req.body
+    const NuevoRegistro=new Tarea( {
+        nombre,
+        descripcion
+    })
+    await NuevoRegistro.save()
+    res.json({
+        mensaje: 'Tarea Guardada'
+    })
+ }
 
 PruebaCtrl.actualizar=(req,res)=>{
     res.send('funcionando desde put')
