@@ -6,7 +6,9 @@ export default function Formulario() {
     const [descripcion, setDescripcion]=useState('')
 
   return (
+
     <div className='container col-md-3 mt-5'>
+      <h1 className='text-primary'>To Do List</h1>
         <form>
   <div className="mb-3">
     <input type="text" className="form-control" required placeholder='Nombre'onChange={e=>setNombre(e.target.value)} />

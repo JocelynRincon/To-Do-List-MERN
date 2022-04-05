@@ -9,8 +9,8 @@ app.set('Port',4000)
 
 
 app .use(morgan('dev'))
-//app.use(boyparser.urlencoded({extended:true} ))
-//app.use(bodyparser.json())
+app.use(boyparser.urlencoded({extended:true} ))
+app.use(bodyparser.json())
 
 //rutas
 app.use('/api/',require('./routes/prueba.route'))
